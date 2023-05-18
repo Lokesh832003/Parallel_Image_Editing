@@ -27,7 +27,7 @@ int main(int argc, char** argv)
 
     Mat mirrored = image.clone();
 
-    //#pragma omp parallel for
+    #pragma omp parallel for
         for (int i = 0; i < cols; i++) 
         {
             for (int j = 0; j < rows; j++)
@@ -46,7 +46,7 @@ int main(int argc, char** argv)
 
     Mat negated = image.clone();
 
-    //#pragma omp parallel for
+    #pragma omp parallel for
         for (int i = 0; i < rows; ++i) 
         {
             for (int j = 0; j < cols; ++j) 
@@ -83,7 +83,7 @@ int main(int argc, char** argv)
 
         Mat blurred = image.clone();
 
-        //#pragma omp parallel for
+        #pragma omp parallel for
             for (int i = 3 / 2; i < rows - 3 / 2; i++) 
             {
                 for (int j = 3 / 2; j < cols - 3 / 2; j++) 
@@ -109,7 +109,7 @@ int main(int argc, char** argv)
         //----------- 4. Grayscale image ----------- 
 
         Mat gray(image.size(), CV_8UC1);
-        //#pragma omp parallel for
+        #pragma omp parallel for
             for (int i = 0; i < rows; ++i) 
             {
                 for (int j = 0; j < cols; ++j) 
@@ -128,7 +128,7 @@ int main(int argc, char** argv)
         int rows2 = rows;
         int cols2 = cols * channels;
 
-        //#pragma omp parallel for
+        #pragma omp parallel for
             for (int i = 0; i < rows; i++)
             {
                 uchar* ptr = satur.ptr<uchar>(i);
@@ -171,6 +171,7 @@ int main(int argc, char** argv)
     
     cout << "\nTime taken: " << time_taken << " seconds" << endl;
     waitKey(0);
-
+    
+    //To get the time for serial implementation, simply remove the "#pragma omp parallel" lines and run again
     return 0;
 }
