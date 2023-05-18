@@ -1,5 +1,6 @@
 # Parallel Image Editing Algorithms
 In this project, the different edited forms (mirrored, negated, grayscaled etc.) of a selected image are produced. This project makes use of OpenMP to parallelize the image processing required to edit images using multiple threads. Each thread will do the same function but on different parts of the image to decrease the time needed for getting the final product.   
+  
 The different integrated functions are -
 <ul>
   <li>Gaussian blur</li>
