@@ -10,6 +10,7 @@ The different integrated functions are -
 </ul>
 
 To compare the time difference between the serial implementation and the parallel implementation, the total time taken for both of the implementations are compared.  
+   
 <i>Serial Implementation:</i>  
 ![image](https://github.com/Lokesh832003/Parallel_Image_Editing/assets/121274778/1fb5abe8-4fcf-4d39-88ce-9401779cd4e3)
 
